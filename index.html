@@ -1,23 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TecnoLi | Todo para tu setup gamer</title>
+  <meta name="description" content="Tarjetas gráficas, procesadores, memorias RAM, fuentes de poder y periféricos al mejor precio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Banner de anuncio superior -->
+  <div class="announce" role="note">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h11v10H3zM14 9h4l3 3v4h-7M7 19a2 2 0 1 0 0-.01M17 19a2 2 0 1 0 0-.01"/></svg>
+    <span>Envío gratis en compras seleccionadas</span>
+  </div>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="#inicio" aria-label="TecnoLi, ir al inicio">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M3 5h26v8h-9v22l-8 3V13H3z" fill="#111827"/><path d="M29 5l8 0v8h-8z" fill="#1D6FE8"/></svg>
+        <span class="logo__text">tecnoli</span>
+      </a>
+
+      <form class="search" role="search" id="search-form">
+        <label for="search-input" class="sr-only">Buscar productos</label>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="search-input" type="search" placeholder="Buscar productos..." autocomplete="off" />
+      </form>
+
+      <div class="header__actions">
+        <a class="account" href="#cuenta">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span class="account__text"><strong>Mi cuenta</strong><small>Iniciar sesión</small></span>
+        </a>
+        <button class="cart" id="cart-button" type="button" aria-label="Ver carrito">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M3 4h2l2.4 10.5a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 8H6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.4" fill="currentColor"/><circle cx="17" cy="19.5" r="1.4" fill="currentColor"/></svg>
+          <span class="cart__text"><strong>Carrito</strong><small id="cart-total">$0.00</small></span>
+          <span class="cart__count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navegación por categorías -->
+    <nav class="nav" aria-label="Categorías">
+      <ul class="nav__list container">
+        <li><a class="nav__link is-active" href="#inicio" aria-current="page">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Inicio</a></li>
+        <li><a class="nav__link" href="#tarjetas-graficas">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Tarjetas gráficas</a></li>
+        <li><a class="nav__link" href="#procesadores">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Procesadores</a></li>
+        <li><a class="nav__link" href="#fuentes-de-poder">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Fuentes de poder</a></li>
+        <li><a class="nav__link" href="#memorias-ram">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="2" y="8" width="20" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 16v2M10 16v2M14 16v2M18 16v2M6 11h2M11 11h2M16 11h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Memorias RAM</a></li>
+        <li><a class="nav__link" href="#perifericos">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="4" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="17" y="13" width="4" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Periféricos</a></li>
+      </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
+  </header>
+
+  <main id="inicio" class="container">
+    <!-- Hero / carrusel -->
+    <section class="hero" aria-roledescription="carrusel" aria-label="Promociones">
+      <div class="hero__content">
+        <h1 class="hero__title" id="hero-title">Todo para tu setup gamer</h1>
+        <p class="hero__subtitle" id="hero-subtitle">Encuentra tus componentes ideales</p>
+        <p class="hero__text" id="hero-text">Rendimiento, calidad y el mejor precio en TecnoLi.</p>
+        <a class="btn btn--primary btn--lg" href="#mas-vendidos">Ver catálogo
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Cambia la URL por la imagen real del banner (o súbela a Supabase Storage). -->
+      <div class="hero__media" id="hero-media" aria-hidden="true">
+        <svg viewBox="0 0 560 300" class="hero__art" role="img">
+          <polygon points="470,0 560,0 560,120" fill="#FDB827"/>
+          <polygon points="430,300 560,170 560,300" fill="#1D6FE8" opacity=".9"/>
+          <rect x="20" y="20" width="300" height="170" rx="6" fill="#0B1020"/>
+          <path d="M20 190 L180 60 L320 20 V190z" fill="#6D28D9" opacity=".75"/>
+          <path d="M20 120 L220 190 H20z" fill="#2563EB" opacity=".7"/>
+          <rect x="160" y="190" width="20" height="34" fill="#1F2937"/><rect x="120" y="222" width="100" height="8" rx="3" fill="#1F2937"/>
+          <rect x="350" y="20" width="150" height="250" rx="8" fill="#111827"/>
+          <rect x="356" y="26" width="6" height="238" rx="3" fill="#22D3EE"/>
+          <rect x="366" y="26" width="6" height="238" rx="3" fill="#A855F7"/>
+          <circle cx="440" cy="110" r="38" fill="none" stroke="#38BDF8" stroke-width="6"/><circle cx="440" cy="110" r="14" fill="#38BDF8" opacity=".5"/>
+          <rect x="60" y="244" width="250" height="34" rx="6" fill="#111827"/>
+          <g fill="#22D3EE" opacity=".8"><rect x="68" y="250" width="12" height="8" rx="2"/><rect x="84" y="250" width="12" height="8" rx="2"/><rect x="100" y="250" width="12" height="8" rx="2"/><rect x="116" y="250" width="12" height="8" rx="2"/><rect x="132" y="250" width="12" height="8" rx="2"/><rect x="148" y="250" width="12" height="8" rx="2"/><rect x="164" y="250" width="12" height="8" rx="2"/><rect x="180" y="250" width="12" height="8" rx="2"/><rect x="196" y="250" width="12" height="8" rx="2"/><rect x="212" y="250" width="12" height="8" rx="2"/></g>
+          <ellipse cx="335" cy="262" rx="20" ry="14" fill="#1F2937"/>
+        </svg>
+      </div>
+
+      <div class="hero__dots" role="tablist" aria-label="Elegir promoción" id="hero-dots"></div>
+    </section>
+
+    <!-- Los 5 más vendidos -->
+    <section class="section" id="mas-vendidos" aria-labelledby="best-title">
+      <header class="section__head">
+        <h2 class="section__title section__title--accent-orange" id="best-title">Los 5 más vendidos</h2>
+        <a class="link-all" href="#catalogo">Ver todos
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </header>
+      <div class="grid-best" id="best-sellers" aria-live="polite"></div>
+    </section>
+
+    <!-- Categorías compactas -->
+    <section class="categories" id="catalogo" aria-label="Categorías de productos">
+      <article class="cat" id="tarjetas-graficas" data-category="tarjetas-graficas" style="--accent:#22B8CF">
+        <header class="section__head section__head--sm"><h2 class="section__title">Tarjetas gráficas</h2><a class="link-all" href="#tarjetas-graficas">Ver todos <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></header>
+        <div class="grid-mini"></div>
+      </article>
+      <article class="cat" id="procesadores" data-category="procesadores" style="--accent:#F59E0B">
+        <header class="section__head section__head--sm"><h2 class="section__title">Procesadores</h2><a class="link-all" href="#procesadores">Ver todos <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></header>
+        <div class="grid-mini"></div>
+      </article>
+      <article class="cat" id="memorias-ram" data-category="memorias-ram" style="--accent:#FACC15">
+        <header class="section__head section__head--sm"><h2 class="section__title">Memorias RAM</h2><a class="link-all" href="#memorias-ram">Ver todos <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></header>
+        <div class="grid-mini"></div>
+      </article>
+      <article class="cat" id="fuentes-de-poder" data-category="fuentes-de-poder" style="--accent:#F5A524">
+        <header class="section__head section__head--sm"><h2 class="section__title">Fuentes de poder</h2><a class="link-all" href="#fuentes-de-poder">Ver todos <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></header>
+        <div class="grid-mini"></div>
+      </article>
+      <article class="cat" id="perifericos" data-category="perifericos" style="--accent:#1E3A5F">
+        <header class="section__head section__head--sm"><h2 class="section__title">Periféricos</h2><a class="link-all" href="#perifericos">Ver todos <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></header>
+        <div class="grid-mini"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="logo__text logo__text--sm">tecnoli</span>
+      <p>© <span id="year"></span> TecnoLi. Precios en pesos mexicanos (MXN).</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
 </html>
